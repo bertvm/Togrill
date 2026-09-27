@@ -1,0 +1,43 @@
+menu "ToGrill CYD"
+
+config TOGRILL_WIFI_SSID
+    string "Wi-Fi SSID"
+    default ""
+    help
+        2.4 GHz network the display joins. Leave empty to build a firmware
+        that only shows temperatures on the screen.
+
+config TOGRILL_WIFI_PASSWORD
+    string "Wi-Fi password"
+    default ""
+
+config TOGRILL_MQTT_URI
+    string "MQTT broker URI"
+    default "mqtt://192.168.1.1:1883"
+    help
+        Example: mqtt://192.168.1.10:1883
+        Used only when a Wi-Fi SSID is set.
+
+config TOGRILL_MQTT_USERNAME
+    string "MQTT username"
+    default ""
+
+config TOGRILL_MQTT_PASSWORD
+    string "MQTT password"
+    default ""
+
+config TOGRILL_MQTT_PREFIX
+    string "MQTT topic prefix"
+    default "togrill"
+    help
+        Readings are published to <prefix>/state and <prefix>/probe/N.
+
+config TOGRILL_PEER_ADDRESS
+    string "Thermometer Bluetooth address"
+    default ""
+    help
+        Optional MAC address, for example AA:BB:CC:DD:EE:FF.
+        Empty means connect to the first ToGrill advertisement found.
+        The phone app cannot use the thermometer while this link is held.
+
+endmenu

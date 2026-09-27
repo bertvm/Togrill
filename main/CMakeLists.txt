@@ -1,0 +1,26 @@
+idf_component_register(
+    SRCS
+        "app_main.c"
+        "grill.c"
+        "display.c"
+        "wifi_sta.c"
+        "mqtt_link.c"
+        "togrill_ble.c"
+        "settings.c"
+        "touch.c"
+        "ui.c"
+    INCLUDE_DIRS "."
+    PRIV_REQUIRES
+        nvs_flash
+        esp_wifi
+        esp_event
+        esp_netif
+        esp_timer
+        bt
+        esp_driver_gpio
+        esp_driver_spi
+        esp_lcd
+        esp_driver_i2c
+        mqtt
+        espressif__esp_lvgl_port
+)
